@@ -9,6 +9,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false })); // form에서 action속성으로 넘어온 body(post의 그 body)내용을 얻기 위함(false는 원래 써줘야 함)
 app.use(bodyParser.json()); // body에 있는 json객체를 넘어오기 위함
 
+app.use(express.static('build')); 
+
 const url = "mongodb+srv://tlatlago824:ljJlxOITgoeMzeX3@cluster0.qkekbll.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(url);
 
